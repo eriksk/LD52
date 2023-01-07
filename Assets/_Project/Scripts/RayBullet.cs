@@ -40,7 +40,8 @@ namespace Scripts
 
         private bool HandleHit(RaycastHit hit)
         {
-            var health = hit.collider.gameObject.GetComponent<Health>();
+            var go = hit.collider.gameObject;
+            var health = go.GetComponent<Health>() ?? go.GetComponentInParent<Health>();
             if (health == null) return false;
             health.Deal(Damage, hit.point, transform.forward * ImpactForce);
             return true;
