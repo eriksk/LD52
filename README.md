@@ -12,8 +12,9 @@ LD52 Entry
 
 ## Working on 
 
-* Enemies do damage on player
-* Basic enemy
-* Basic weapon
+* Basic enemy ai
 
 ## Done
+
+* Enemies do damage on player
+* Basic weapon
