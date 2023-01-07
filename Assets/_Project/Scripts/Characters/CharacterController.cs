@@ -21,6 +21,7 @@ namespace Scripts.Characters
         public Transform GunModel;
         public Transform GunPosition;
         public Transform GunAdsPosition;
+        public Weapon Weapon;
 
         private Rigidbody _rigidbody;
         private Camera _camera;
@@ -61,7 +62,12 @@ namespace Scripts.Characters
             _camera.transform.localRotation = Quaternion.identity;
             _camera.transform.localScale = Vector3.one;
 
-            // GunModel.SetParent(CameraAnchor);
+            Weapon.OnFired += () =>
+            {
+                _gunTargetPosition += Vector3.forward * 0.2f; // ????
+            };
+
+            GunModel.SetParent(CameraAnchor);
             ResetController();
         }
 
@@ -94,13 +100,13 @@ namespace Scripts.Characters
             {
                 // Time.timeScale = .3f;
                 _targetFov = 50f;
-                // _gunTargetPosition = GunAdsPosition.localPosition;
+                _gunTargetPosition = GunAdsPosition.localPosition;
             }
             else
             {
                 Time.timeScale = 1f;
                 _targetFov = 80f;
-                // _gunTargetPosition = GunPosition.localPosition;
+                _gunTargetPosition = GunPosition.localPosition;
             }
 
             _camera.fieldOfView = Mathf.Lerp(_camera.fieldOfView, _targetFov, 25f * Time.unscaledDeltaTime);
@@ -152,7 +158,7 @@ namespace Scripts.Characters
                 // HeadCollider.enabled = true;
             }
             CameraAnchor.localPosition = Vector3.up * height;
-            // GunModel.transform.localPosition = Vector3.Lerp(GunModel.transform.localPosition, _gunTargetPosition, 15f * Time.deltaTime);
+            GunModel.transform.localPosition = Vector3.Lerp(GunModel.transform.localPosition, _gunTargetPosition, 15f * Time.deltaTime);
 
             _jumpCooldown -= Time.deltaTime;
 

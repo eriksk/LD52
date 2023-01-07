@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -5,6 +6,8 @@ public class Weapon : MonoBehaviour
     public float FireRate = 1f;
     public Transform BulletFirePosition;
     public GameObject BulletPrefab;
+
+    public event Action OnFired;
 
     private float _current;
 
@@ -23,8 +26,20 @@ public class Weapon : MonoBehaviour
 
         if (BulletPrefab != null)
         {
-            var bullet = Instantiate(BulletPrefab, BulletFirePosition.position, BulletFirePosition.rotation);
+            const float spread = 5f;
+            for (var i = 0; i < 6; i++)
+            {
+                var rotationOffset = Quaternion.Euler(
+                    UnityEngine.Random.Range(-spread, spread),
+                    UnityEngine.Random.Range(-spread, spread),
+                    0
+                );
+
+                Instantiate(BulletPrefab, BulletFirePosition.position, BulletFirePosition.rotation * rotationOffset);
+            }
         }
+
+        OnFired?.Invoke();
     }
 
     void Update()

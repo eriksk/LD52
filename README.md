@@ -5,13 +5,13 @@ LD52 Entry
 
 ## TODO: 
 
-* Enemies do damage on player
 * Game Start??
 * Win Screen
 * Loose Screen
 
 ## Working on 
 
+* Enemies do damage on player
 * Basic enemy
 * Basic weapon
 
