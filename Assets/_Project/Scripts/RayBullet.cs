@@ -5,6 +5,9 @@ namespace Scripts
 {
     public class RayBullet : MonoBehaviour
     {
+        public GameObject HitHealthPrefab;
+        public GameObject MissHealthPrefab;
+
         public float MaxRange = 50f;
         public float Damage = 1f;
         public float ImpactForce = 10f;
@@ -25,15 +28,14 @@ namespace Scripts
                 if (HandleHit(hit))
                 {
                     // Hit something with health
+                    if (HitHealthPrefab != null) Instantiate(HitHealthPrefab, hit.point, Quaternion.identity);
                 }
                 else
                 {
                     // Hit something without health
+                    if (MissHealthPrefab != null) Instantiate(MissHealthPrefab, hit.point, Quaternion.identity);
                 }
             }
-
-            // TODO: some trail or shit?
-            Destroy(gameObject);
         }
 
         private bool HandleHit(RaycastHit hit)

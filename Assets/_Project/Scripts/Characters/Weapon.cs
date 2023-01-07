@@ -25,8 +25,6 @@ public class Weapon : MonoBehaviour
         {
             var bullet = Instantiate(BulletPrefab, BulletFirePosition.position, BulletFirePosition.rotation);
         }
-        Debug.Log("bang");
-
     }
 
     void Update()

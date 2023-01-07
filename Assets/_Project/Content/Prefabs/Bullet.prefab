@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646505115427360446}
   - component: {fileID: -2168476927260479009}
+  - component: {fileID: 5733114415066475102}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -43,9 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88a6984232c76749be1a0beb679dd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitHealthPrefab: {fileID: 0}
+  MissHealthPrefab: {fileID: 1570794521193969640, guid: a6d509f9a1097304db9f8de0411946f1, type: 3}
   MaxRange: 50
   Damage: 10
   ImpactForce: 10
   CollisionLayer:
     serializedVersion: 2
     m_Bits: 129
+--- !u!114 &5733114415066475102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646505115427360441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fa0966a965a22458d5304bd55f5fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time: 0.1
