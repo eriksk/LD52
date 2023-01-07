@@ -8,6 +8,7 @@ LD52 Entry
 * Game Start??
 * Win Screen
 * Loose Screen
+* Hitstun
 
 ## Working on 
 

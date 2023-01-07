@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 6832289501505290899}
   - component: {fileID: 6832289501505290898}
   - component: {fileID: 6832289501505290909}
+  - component: {fileID: 5720033831626210765}
+  - component: {fileID: 6844436422198147718}
   m_Layer: 7
   m_Name: CarrotMan
   m_TagString: Untagged
@@ -113,6 +115,7 @@ Transform:
   m_Children:
   - {fileID: 6832289500381726292}
   - {fileID: 6832289501836158593}
+  - {fileID: 88745051539018732}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 195, z: 0}
@@ -157,6 +160,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9e2feb880ec61469379da88b56c604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5720033831626210765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832289501505290897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0edd47cf416d0d4b8438d9e70c37778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 2114573435269702334, guid: 1299a283468fb9243ae69cfe1e4d340e, type: 3}
+--- !u!114 &6844436422198147718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832289501505290897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65e325182c667846acf041cd1d333ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 2114573435269702334, guid: 1299a283468fb9243ae69cfe1e4d340e, type: 3}
 --- !u!1 &6832289501836158598
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,3 +231,73 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &8962754501891367930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88745051539018732}
+  - component: {fileID: 1463092118412449927}
+  - component: {fileID: 843087874640035813}
+  - component: {fileID: 1216216514223671453}
+  m_Layer: 7
+  m_Name: hurtbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88745051539018732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962754501891367930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.186, y: 1.707, z: 0.696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6832289501505290896}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1463092118412449927
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962754501891367930}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &843087874640035813
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962754501891367930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: -0.000009536749, y: 0, z: -0.000005722048}
+--- !u!114 &1216216514223671453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962754501891367930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6c3c9ddea1ddb48a00082cd1d53fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HurtsMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Damage: 1

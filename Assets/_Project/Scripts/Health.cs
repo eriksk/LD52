@@ -26,6 +26,8 @@ namespace Scripts
         {
             if (Dead) return;
 
+            Debug.Log(gameObject.name + " damaged by " + damage);
+
             _health -= damage;
             if (_health <= 0f)
             {

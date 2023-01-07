@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts.Characters
@@ -69,6 +71,14 @@ namespace Scripts.Characters
 
             GunModel.SetParent(CameraAnchor);
             ResetController();
+            StartCoroutine(WaitAndCenterMousePosition());
+        }
+
+        private IEnumerator WaitAndCenterMousePosition()
+        {
+            yield return new WaitForSeconds(0.2f);
+            _yaw = 0f;
+            _pitch = 0f;
         }
 
         public void ResetController()
