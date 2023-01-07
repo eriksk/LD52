@@ -7,6 +7,7 @@ namespace Scripts.AI
     [RequireComponent(typeof(EnemyCharacterController))]
     public class EnemyAI : MonoBehaviour
     {
+        public Animation Animator;
         private EnemyCharacterController _controller;
 
         void Start()
@@ -28,6 +29,15 @@ namespace Scripts.AI
             directionToPlayer.y = 0f;
 
             _controller.InputMovement = directionToPlayer;
+
+            if (_controller.IsMoving)
+            {
+                PlayAnim("carrot_walk");
+            }
+            else
+            {
+                PlayAnim("carrot_idle");
+            }
             // _controller.InputJump= ??
         }
 
@@ -35,6 +45,15 @@ namespace Scripts.AI
         {
             _controller.InputMovement = Vector3.zero;
             _controller.InputJump = false;
+        }
+
+        private string _activeAnimation;
+        private void PlayAnim(string name)
+        {
+            if (_activeAnimation == name) return;
+
+            Animator.CrossFade(name, 0.5f);
+            _activeAnimation = name;
         }
     }
 }

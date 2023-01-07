@@ -53,6 +53,8 @@ namespace Scripts.Characters
             _rigidbody.AddForce(force, ForceMode.Impulse);
         }
 
+        public bool IsMoving => _rigidbody.velocity.magnitude > 0.1f;
+
         void Update()
         {
             _grounded = CheckGround();
